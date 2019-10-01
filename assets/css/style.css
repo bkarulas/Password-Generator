@@ -1,0 +1,32 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    margin: auto;
+}
+h1, h2{
+    font-weight: bolder;
+}
+header{
+    text-align: center;
+}
+textarea{
+    margin: auto;
+    border-style: dashed;
+    width: 95%;
+    height: 100px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace
+}
+
+button{
+    border-style: hidden;
+}
+.main{
+    padding: 50px;
+}
+.gen{
+    float: left;
+}
+.copy{
+    float: right;
+}
