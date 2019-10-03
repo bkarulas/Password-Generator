@@ -1,7 +1,6 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    width: 50%;
-    margin: auto;
+.container{
+    font-family: Arial, Helvetica, sans-serif;    
+    width: 70%;
 }
 h1, h2{
     font-weight: bolder;
@@ -26,7 +25,11 @@ button{
 }
 .gen{
     float: left;
+    margin:auto;
+    padding-left: 20px;
 }
 .copy{
     float: right;
+    margin: auto;
+    padding-right:20px;
 }

@@ -7,8 +7,53 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript">
+    var passNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    var passUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var passLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var passSpecial = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", "|", ";", ":", "<", ">", ",", ".", "?", "/"];
+    var passLenght = 0;
+    var passArr = [];
+    var passWord = "";
+    var count = 1;
+    var char ="";
+
+    function generate (){
+    var passLenght = window.prompt("How many character would you like to make the Password?");
+    var reqSpecial = window.confirm ("Do you requre Special Characters?");
+    var reqUpper = window.confirm ("Do you require Capital Leters?");
+    var reqLower = window.confirm ("Do you require Lower case Letters?");
+    var reqNumber = window.confirm ("Do you require Numbers?");
+
+    if (reqSpecial){
+      passArr.push.apply(passArr, passSpecial);
+    }
+    if (reqUpper){
+      passArr.push.apply(passArr, passUpper);
+    }
+    if (reqLower){
+      passArr.push.apply(passArr, passLower);
+    }
+    if (reqNumber){
+      passArr.push.apply(passArr, passNumber);
+    }
+
+    while (count <= passLenght){
+        char = passArr[Math.floor(Math.random() * passArr.length)];
+        passWord=passWord.concat(char);
+        count++;
+      }
+    document.getElementById("password").innerHTML=passWord;
+    }
+
+    function copy (passWord){
+      window.alert("The Password "+ passWord + " has been copied");
+    }
+    
+    </script>
   </head>
-  <body>
+
+  <body class="container">
     <header>
       <h1>Password Generator</h1>
     </header>
@@ -26,22 +71,13 @@
       </div>
       <hr>
       <div class="row">
-        <div class="gen">
-          <button type="button" class="btn btn-danger" id="generate">Generate Password</button>
+        <div class="col-">
+          <button type="button" class="btn btn-danger" id="generate" onclick="generate();">Generate Password</button>
         </div>
         <div class="copy"></div>
-          <button id="copy">Copy to Clipboard</button>
+          <button type="button" class="btn btn-danger" id="copy" onclick="copy(passWord);">Copy to Clipboard</button>
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-    var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    var capLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var lowLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var special = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", "|", ";", ":", "<", ">", ",", ".", "?", "/"];
-    var lenght = 0;
-    
-
-    </script>
   </body>
 </html>
