@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
   </head>
 
   <body class="container">
@@ -20,6 +21,7 @@
       </div>
       <hr>
       <div class="row">
+        <!--Text area where the password will be shown-->
         <textarea
           readonly
           id="password"
@@ -28,14 +30,17 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col-">
+        <div id="butgen" class="col-6">
+          <!--Generate Button-->
           <button type="button" class="btn btn-danger" id="generate" onclick="generate();">Generate Password</button>
         </div>
-        <div class="copy"></div>
+        <div id="butcopy" class="col-6">
+          <!--Copy Button-->
           <button type="button" class="btn btn-danger" id="copy" onclick="copyPass();">Copy to Clipboard</button>
         </div>
       </div>
     </div>
+    <!--Calling the JavaScript-->
     <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>
