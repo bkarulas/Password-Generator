@@ -7,63 +7,7 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script type="text/javascript">
-    //Variable decleration
-    //All possible numbers - Array
-    var passNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    //All possible upper case letters - Array
-    var passUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    //All possible lowee case letters - Array
-    var passLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    //All possible special characters - Array
-    var passSpecial = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", "|", ";", ":", "<", ">", ",", ".", "?", "/"];
-    //The lenght of the passward chosen by the user
-    var passLenght = 0;
-    //All possible characters the password can be
-    var passArr = [];
-    //The actula password
-    var passWord = "";
-    //counter for the while loop
-    var count = 1;
-    //The character choosen at ramdom in the while loop
-    var char ="";
-    //The finction to gereate the password
-    function generate (){
-      //Series of questions to see whar the user requires in their password
-      var passLenght = window.prompt("How many character would you like to make the Password (8-128)?");
-      var reqSpecial = window.confirm ("Do you requre Special Characters?");
-      var reqUpper = window.confirm ("Do you require Capital Leters?");
-      var reqLower = window.confirm ("Do you require Lower case Letters?");
-      var reqNumber = window.confirm ("Do you require Numbers?");
-      //Puts the requirements from the user into 1 array called passArr if true
-      if (reqSpecial){
-        passArr.push.apply(passArr, passSpecial);
-      }
-      if (reqUpper){
-        passArr.push.apply(passArr, passUpper);
-      }
-      if (reqLower){
-        passArr.push.apply(passArr, passLower);
-      }
-      if (reqNumber){
-        passArr.push.apply(passArr, passNumber);
-      }
-      //Takes the length the user requested and finds ramdom that amount of ramdom characters
-      while (count <= passLenght){
-        char = passArr[Math.floor(Math.random() * passArr.length)];
-        passWord=passWord.concat(char);
-        count++;
-      }
-      //Puts the password in the "password" feild in the HTML page
-      document.getElementById("password").innerHTML=passWord;
-    //End of "generate" function  
-    }
-    //Function to copy the password from the "password" feild
-    function copy (passWord){
-      window.alert("The Password "+ passWord + " has been copied");
-    }
-    //End of javascript
-    </script>
+    
   </head>
 
   <body class="container">
@@ -88,9 +32,10 @@
           <button type="button" class="btn btn-danger" id="generate" onclick="generate();">Generate Password</button>
         </div>
         <div class="copy"></div>
-          <button type="button" class="btn btn-danger" id="copy" onclick="copy(passWord);">Copy to Clipboard</button>
+          <button type="button" class="btn btn-danger" id="copy" onclick="copyPass();">Copy to Clipboard</button>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>

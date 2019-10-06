@@ -19,6 +19,7 @@ textarea{
 
 button{
     border-style: hidden;
+    border-radius: 50%;
 }
 .main{
     padding: 50px;
@@ -32,4 +33,7 @@ button{
     float: right;
     margin: auto;
     padding-right:20px;
+}
+.btn btn-danger{
+    border-radius: 50%;
 }
